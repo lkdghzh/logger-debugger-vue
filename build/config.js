@@ -9,10 +9,10 @@ const version = process.env.VERSION || require('../package.json').version
 const weexVersion = process.env.WEEX_VERSION || require('../packages/weex-vue-framework/package.json').version
 
 const banner =
+
   '/*!\n' +
+  ' * Update author:like\n' +
   ' * Vue.js v' + version + '\n' +
-  ' * (c) 2014-' + new Date().getFullYear() + ' Evan You\n' +
-  ' * Released under the MIT License.\n' +
   ' */'
 
 const weexFactoryPlugin = {
