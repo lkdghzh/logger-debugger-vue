@@ -3,20 +3,20 @@ const webpack = require('webpack')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const FlowtypePlugin = require('flowtype-loader/plugin');
 
-const DIST_JS_PATH = path.resolve(__dirname, '../dist')
+const DIST_JS_PATH = path.resolve(__dirname, '../examples/unar/')
 const NODE_MODULES_PATH = path.resolve(__dirname, '../node_modules')
 const SRC_PATH = path.resolve(__dirname, '../src')
 console.log(1, path.resolve(__dirname, '../../../src/core/'))
 
 const TPL_PATH = path.resolve(__dirname, '../examples/unar/index.ejs')
-const DIST_HTML_PATH = path.resolve(__dirname, '../dist/index.html')
+const DIST_HTML_PATH = path.resolve(__dirname, '../examples/unar/index.html')
 module.exports = {
   entry: {
     app: './src/index.js',
   },
   output: {
     path: DIST_JS_PATH,
-    publicPath: '../dist',
+    publicPath: './',
     filename: '[name].js'
   },
   module: {
