@@ -12,6 +12,8 @@
     "types/*.d.ts"
   ],
   "scripts": {
+    "pub:unar": "webpack --config ./build/webpack.config.js",
+    "dev:unar": "node ./build/dev-server.js",
     "dev": "rollup -w -c build/config.js --environment TARGET:web-full-dev",
     "dev:cjs": "rollup -w -c build/config.js --environment TARGET:web-runtime-cjs",
     "dev:esm": "rollup -w -c build/config.js --environment TARGET:web-runtime-esm",
@@ -43,7 +45,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vuejs/vue.git"
+    "url": "git+https://github.com/lkdghzh/mvvm.git"
   },
   "keywords": [
     "vue"
@@ -80,10 +82,13 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-jasmine": "^2.2.0",
     "eslint-plugin-vue-libs": "^1.2.0",
+    "express": "^4.16.2",
     "file-loader": "^0.11.2",
     "flow-bin": "^0.48.0",
+    "flowtype-loader": "^0.2.2",
     "hash-sum": "^1.0.2",
     "he": "^1.1.1",
+    "html-webpack-plugin": "^2.30.1",
     "http-server": "^0.10.0",
     "jasmine": "^2.6.0",
     "jasmine-core": "^2.6.3",
@@ -120,7 +125,9 @@
     "shelljs": "^0.7.8",
     "typescript": "^2.3.4",
     "uglify-js": "^3.0.15",
-    "webpack": "^2.6.1",
+    "webpack": "^2.7.0",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-hot-middleware": "^2.21.0",
     "weex-js-runtime": "^0.20.5",
     "weex-vdom-tester": "^0.2.0"
   },
@@ -128,5 +135,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "dependencies": {}
 }
