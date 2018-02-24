@@ -5,8 +5,9 @@ const FlowtypePlugin = require('flowtype-loader/plugin');
 
 const DIST_JS_PATH = path.resolve(__dirname, '../examples/unar/')
 const NODE_MODULES_PATH = path.resolve(__dirname, '../node_modules')
-const SRC_PATH = path.resolve(__dirname, '../src')
 
+const SRC_PATH = path.resolve(__dirname, '../src')
+console.log(NODE_MODULES_PATH,SRC_PATH)
 const TPL_PATH = path.resolve(__dirname, '../examples/unar/index.ejs')
 const DIST_HTML_PATH = path.resolve(__dirname, '../examples/unar/index.html')
 
@@ -24,13 +25,13 @@ module.exports = {
                 test: /\.js$/,
                 enforce: 'pre',
                 exclude: NODE_MODULES_PATH,
-                include: SRC_PATH,
+                // include: SRC_PATH,
                 use: "eslint-loader"
             },
             {
                 test: /\.js$/,
                 exclude: NODE_MODULES_PATH,
-                include: SRC_PATH,
+                // include: SRC_PATH,
                 use: "babel-loader"
             },
             {

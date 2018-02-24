@@ -3,13 +3,13 @@ const webpack = require('webpack')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const FlowtypePlugin = require('flowtype-loader/plugin');
 
-const DIST_JS_PATH = path.resolve(__dirname, '../examples/unar/')
+const DIST_JS_PATH = path.resolve(__dirname, '../examples/unar/test/')
 const NODE_MODULES_PATH = path.resolve(__dirname, '../node_modules')
-const SRC_PATH = path.resolve(__dirname, '../src')
+// const SRC_PATH = path.resolve(__dirname, '../src')
 console.log(1, path.resolve(__dirname, '../../../src/core/'))
 
 const TPL_PATH = path.resolve(__dirname, '../examples/unar/index.ejs')
-const DIST_HTML_PATH = path.resolve(__dirname, '../examples/unar/index.html')
+const DIST_HTML_PATH = path.resolve(__dirname, '../examples/unar/test/index.html')
 module.exports = {
   entry: {
     app: './src/index.js',
@@ -24,13 +24,13 @@ module.exports = {
         test: /\.js$/,
         enforce: 'pre',
         exclude: NODE_MODULES_PATH,
-        include: SRC_PATH,
+        // include: SRC_PATH,
         use: "eslint-loader"
       },
       {
         test: /\.js$/,
         exclude: NODE_MODULES_PATH,
-        include: SRC_PATH,
+        // include: SRC_PATH,
         use: "babel-loader"
       },
       {
@@ -65,5 +65,8 @@ module.exports = {
         filename: DIST_HTML_PATH,
         template: TPL_PATH,
     }),
+    new webpack.DefinePlugin({
+      __WEEX__: false
+    })
   ]
 }

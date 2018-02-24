@@ -12,7 +12,7 @@
     "types/*.d.ts"
   ],
   "scripts": {
-    "pub:unar": "webpack --config ./build/webpack.config.js",
+    "test:unar": "webpack --config ./build/webpack.config.js",
     "dev:unar": "node ./build/dev-server.js",
     "dev": "rollup -w -c build/config.js --environment TARGET:web-full-dev",
     "dev:cjs": "rollup -w -c build/config.js --environment TARGET:web-runtime-cjs",
