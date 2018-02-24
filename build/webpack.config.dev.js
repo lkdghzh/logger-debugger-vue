@@ -6,8 +6,6 @@ const FlowtypePlugin = require('flowtype-loader/plugin');
 const DIST_JS_PATH = path.resolve(__dirname, '../examples/unar/')
 const NODE_MODULES_PATH = path.resolve(__dirname, '../node_modules')
 
-const SRC_PATH = path.resolve(__dirname, '../src')
-console.log(NODE_MODULES_PATH,SRC_PATH)
 const TPL_PATH = path.resolve(__dirname, '../examples/unar/index.ejs')
 const DIST_HTML_PATH = path.resolve(__dirname, '../examples/unar/index.html')
 
@@ -17,7 +15,7 @@ module.exports = {
     },
     output: {
         path: DIST_JS_PATH,
-        publicPath: './',
+        publicPath: '/',
         filename: '[name].js'
     },
     module: {
@@ -61,6 +59,9 @@ module.exports = {
         new htmlWebpackPlugin({
             filename: DIST_HTML_PATH,
             template: TPL_PATH,
+        }),
+        new webpack.DefinePlugin({
+            __WEEX__: false
         }),
         new webpack.HotModuleReplacementPlugin(),
     ],

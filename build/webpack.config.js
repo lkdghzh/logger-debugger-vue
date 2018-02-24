@@ -24,13 +24,11 @@ module.exports = {
         test: /\.js$/,
         enforce: 'pre',
         exclude: NODE_MODULES_PATH,
-        // include: SRC_PATH,
         use: "eslint-loader"
       },
       {
         test: /\.js$/,
         exclude: NODE_MODULES_PATH,
-        // include: SRC_PATH,
         use: "babel-loader"
       },
       {
